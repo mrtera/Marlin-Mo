@@ -2275,12 +2275,12 @@
  *
  * See https://marlinfw.org/docs/features/lin_advance.html for full instructions.
  */
-//#define LIN_ADVANCE
+#define LIN_ADVANCE   // MW
 #if ENABLED(LIN_ADVANCE)
   #if ENABLED(DISTINCT_E_FACTORS)
     #define ADVANCE_K { 0.22 }    // (mm) Compression length per 1mm/s extruder speed, per extruder
   #else
-    #define ADVANCE_K 0.22        // (mm) Compression length applying to all extruders
+    #define ADVANCE_K 0.6        // (mm) Compression length applying to all extruders
   #endif
   //#define ADVANCE_K_EXTRA       // Add a second linear advance constant, configurable with M900 L.
   //#define LA_DEBUG              // Print debug information to serial during operation. Disable for production use.
@@ -2335,10 +2335,10 @@
  * the probe to be unable to reach any points.
  */
 #if PROBE_SELECTED && !IS_KINEMATIC
-  #define PROBING_MARGIN_LEFT 60 // MW
-  #define PROBING_MARGIN_RIGHT 60 // MW
-  #define PROBING_MARGIN_FRONT 20 // MW
-  #define PROBING_MARGIN_BACK 20 // MW
+  #define PROBING_MARGIN_LEFT 10 // MW
+  #define PROBING_MARGIN_RIGHT 10 // MW
+  #define PROBING_MARGIN_FRONT 10 // MW
+  #define PROBING_MARGIN_BACK 10 // MW
 #endif
 
 #if ANY(MESH_BED_LEVELING, AUTO_BED_LEVELING_UBL)
