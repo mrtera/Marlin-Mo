@@ -1253,7 +1253,7 @@
  * Override with M201
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 900, 500, 150, 2000 } // MW
+#define DEFAULT_MAX_ACCELERATION      { 4000, 3000, 15, 1000 } // MW
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -1270,7 +1270,7 @@
  *   M204 I    Angular Acceleration
  *   M204 J    Angular Travel Acceleration
  */
-#define DEFAULT_ACCELERATION                   600  // X, Y, Z ... and E acceleration for printing moves // MW
+#define DEFAULT_ACCELERATION                   1000  // X, Y, Z ... and E acceleration for printing moves // MW
 #define DEFAULT_RETRACT_ACCELERATION           500  // E acceleration for retracts
 #define DEFAULT_TRAVEL_ACCELERATION           1200  // X, Y, Z ... acceleration for travel (non printing) moves // MMW
 #if ENABLED(AXIS4_ROTATES)
@@ -1570,13 +1570,13 @@
 #define PROBING_MARGIN 10
 
 // X and Y axis travel speed (mm/min) between probes
-#define XY_PROBE_FEEDRATE (50*60)
+#define XY_PROBE_FEEDRATE (90*60)   // MW
 
 // Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
-#define Z_PROBE_FEEDRATE_FAST (4*60)
+#define Z_PROBE_FEEDRATE_FAST (9*60)   // MW
 
 // Feedrate (mm/min) for the "accurate" probe of each point
-#define Z_PROBE_FEEDRATE_SLOW (Z_PROBE_FEEDRATE_FAST / 2)
+#define Z_PROBE_FEEDRATE_SLOW (Z_PROBE_FEEDRATE_FAST / 4)   // MW
 
 /**
  * Probe Activation Switch
@@ -1871,7 +1871,7 @@
   #define FIL_RUNOUT_ENABLED_DEFAULT true // Enable the sensor on startup. Override with M412 followed by M500.
   #define NUM_RUNOUT_SENSORS   1          // Number of sensors, up to one per extruder. Define a FIL_RUNOUT#_PIN for each.
 
-  #define FIL_RUNOUT_STATE     LOW // MW  // Pin state indicating that filament is NOT present.
+  #define FIL_RUNOUT_STATE     HIGH // MW  // Pin state indicating that filament is NOT present.
   #define FIL_RUNOUT_PULLUP               // Use internal pullup for filament runout pins.
   //#define FIL_RUNOUT_PULLDOWN           // Use internal pulldown for filament runout pins.
   //#define WATCH_ALL_RUNOUT_SENSORS      // Execute runout script on any triggering sensor, not only for the active extruder.
