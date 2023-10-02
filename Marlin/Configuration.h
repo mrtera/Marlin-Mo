@@ -691,9 +691,9 @@
     #define DEFAULT_Kd_LIST {  78.81,  78.81 }
   #else
     // Ender 3 v2
-    #define DEFAULT_Kp  44.65   //MoWi
-    #define DEFAULT_Ki   4.54   //MoWi
-    #define DEFAULT_Kd  109.84  //MoWi
+    #define DEFAULT_Kp  25.31   //MoWi
+    #define DEFAULT_Ki   1.99   //MoWi
+    #define DEFAULT_Kd  80.5  //MoWi
   #endif
 #else
   #define BANG_MAX 255    // Limit hotend current while in bang-bang mode; 255=full current
@@ -1557,7 +1557,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -42, -10, 0 }  // MW
+#define NOZZLE_TO_PROBE_OFFSET { -42, -10, -2 }  // MW
 
 // Enable and set to use a specific tool for probing. Disable to allow any tool.
 #define PROBING_TOOL 0
@@ -1570,10 +1570,10 @@
 #define PROBING_MARGIN 10
 
 // X and Y axis travel speed (mm/min) between probes
-#define XY_PROBE_FEEDRATE (100*60)   // MW
+#define XY_PROBE_FEEDRATE (150*60)   // MW
 
 // Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
-#define Z_PROBE_FEEDRATE_FAST (10*60)   // MW
+#define Z_PROBE_FEEDRATE_FAST (30*60)   // MW
 
 // Feedrate (mm/min) for the "accurate" probe of each point
 #define Z_PROBE_FEEDRATE_SLOW (Z_PROBE_FEEDRATE_FAST / 3)   // MW
