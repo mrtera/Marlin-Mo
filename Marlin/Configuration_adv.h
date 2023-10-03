@@ -2247,7 +2247,7 @@
 
   //#define BABYSTEP_DISPLAY_TOTAL          // Display total babysteps since last G28
 
-  #define BABYSTEP_ZPROBE_OFFSET // MW         // Combine M851 Z and Babystepping
+  #define BABYSTEP_ZPROBE_OFFSET // MoWi         // Combine M851 Z and Babystepping
   //#define BABYSTEP_GLOBAL_Z               // Combine M424 Z and Babystepping
 
   #if ANY(BABYSTEP_ZPROBE_OFFSET, BABYSTEP_GLOBAL_Z)
@@ -2275,12 +2275,12 @@
  *
  * See https://marlinfw.org/docs/features/lin_advance.html for full instructions.
  */
-// #define LIN_ADVANCE   // MW
+#define LIN_ADVANCE   // MoWi
 #if ENABLED(LIN_ADVANCE)
   #if ENABLED(DISTINCT_E_FACTORS)
-    #define ADVANCE_K { 1.4 } //MW   // (mm) Compression length per 1mm/s extruder speed, per extruder
+    #define ADVANCE_K { 1.4 } //MoWi   // (mm) Compression length per 1mm/s extruder speed, per extruder
   #else
-    #define ADVANCE_K 1.4   // MW // (mm) Compression length applying to all extruders
+    #define ADVANCE_K 1.4   // MoWi // (mm) Compression length applying to all extruders
   #endif
   //#define ADVANCE_K_EXTRA       // Add a second linear advance constant, configurable with M900 L.
   //#define LA_DEBUG              // Print debug information to serial during operation. Disable for production use.
@@ -2335,10 +2335,10 @@
  * the probe to be unable to reach any points.
  */
 #if PROBE_SELECTED && !IS_KINEMATIC
-  #define PROBING_MARGIN_LEFT 10 // MW
-  #define PROBING_MARGIN_RIGHT 10 // MW
-  #define PROBING_MARGIN_FRONT 10 // MW
-  #define PROBING_MARGIN_BACK 10 // MW
+  #define PROBING_MARGIN_LEFT 10 // MoWi
+  #define PROBING_MARGIN_RIGHT 10 // MoWi
+  #define PROBING_MARGIN_FRONT 10 // MoWi
+  #define PROBING_MARGIN_BACK 10 // MoWi
 #endif
 
 #if ANY(MESH_BED_LEVELING, AUTO_BED_LEVELING_UBL)
@@ -2806,7 +2806,7 @@
  *
  * Enable PARK_HEAD_ON_PAUSE to add the G-code M125 Pause and Park.
  */
-#define ADVANCED_PAUSE_FEATURE // MW
+#define ADVANCED_PAUSE_FEATURE // MoWi
 #if ENABLED(ADVANCED_PAUSE_FEATURE)
   #define PAUSE_PARK_RETRACT_FEEDRATE         60  // (mm/s) Initial retract feedrate.
   #define PAUSE_PARK_RETRACT_LENGTH            2  // (mm) Initial retract.
