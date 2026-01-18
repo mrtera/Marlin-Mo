@@ -21,6 +21,8 @@
  */
 #pragma once
 
+#define CONFIG_EXAMPLES_DIR "Creality/Ender-3 V2/CrealityV422/MarlinUI" // MoWi
+
 /**
  * Conditionals_adv.h
  * Conditionals set before pins.h and which depend on Configuration_adv.h.
